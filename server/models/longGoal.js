@@ -1,4 +1,4 @@
-"use strict";
+"use strict"
 
 module.exports = (sequelize, DataTypes) => {
   const LongGoal = sequelize.define("longgoal", {
@@ -25,5 +25,15 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     underscored: true,
   })
+
+  LongGoal.associate = models => {
+    console.log(models)
+
+    LongGoal.hasMany(models.shortgoal, {
+      foreignKey: "longgoal_id",
+      sourceKey: "id",
+    })
+  }
+
   return LongGoal
-};
+}

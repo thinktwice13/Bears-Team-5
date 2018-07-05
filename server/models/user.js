@@ -1,5 +1,4 @@
 "use strict"
-const LongGoal = require("./longGoal")
 
 module.exports = (sequelize, DataTypes) => {
   const User = sequelize.define("user", {
