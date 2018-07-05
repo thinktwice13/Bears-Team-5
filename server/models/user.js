@@ -26,10 +26,9 @@ module.exports = (sequelize, DataTypes) => {
     underscored: true,
   })
 
-  User.hasMany(LongGoal, {
-    as: "longgoals",
-    foreignkey: "user_id",
-  })
+  User.associate = models => {
+    User.hasMany(models.longgoal)
+  }
 
   return User
 }
