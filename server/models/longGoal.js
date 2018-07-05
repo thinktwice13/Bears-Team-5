@@ -1,29 +1,29 @@
-'use strict';
+"use strict";
 
 module.exports = (sequelize, DataTypes) => {
-  const LongGoal = sequelize.define('longgoal', {
+  const LongGoal = sequelize.define("longgoal", {
     id: {
       type: DataTypes.UUID,
       primaryKey: true,
       defaultValue: DataTypes.UUIDV4,
-      allowNull: false
+      allowNull: false,
     },
     description: {
       type: DataTypes.STRING,
-      required: true
+      required: true,
     },
     user_id: {
       type: DataTypes.UUID,
-      allowNull: false
+      allowNull: false,
     },
     created_at: {
       type: DataTypes.DATE,
-      allowNull: false
+      allowNull: false,
     },
-    updated_at:  DataTypes.DATE,
-    deleted_at: DataTypes.DATE
+    updated_at: DataTypes.DATE,
+    deleted_at: DataTypes.DATE,
   }, {
-    underscored: true
-  });
-  return LongGoal;
+    underscored: true,
+  })
+  return LongGoal
 };
